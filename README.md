@@ -10,10 +10,7 @@ Wrapper for freshchat.
 *   todo
 
 ### Demo -> Show me what you got
-
-[Link to your awesome Demo](#) 
-
-[Another Link to your awesome Demo](#)
+* todo
 
 ### Code Demo
 
