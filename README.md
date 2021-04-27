@@ -1,39 +1,46 @@
-ReactJS Freshchat 
+# ReactJS Freshchat
 =======================================
 
-Wrapper for freshchat.
+React component wrapper for Freshchat. The oficial documentation can be found here <https://developers.freshchat.com/web-sdk/>.
 
 * * *
 
 ### List of features
 
-*   todo
-
-### Demo -> Show me what you got
-* todo
+*   Create a chat with anonymous user
+*   Create a chat with Logged in user
 
 ### Code Demo
 
-```html We will use markdown for the Syntax Highlighting
+```tsx
+  import { Freshchat } from 'reactjs-freshchat';
 
-todo
+ //1. Anonymous User
+    <Freshchat token={'YOUR-TOKEN-HERE'} />
+
+ //2. Logged in User
+    <Freshchat 
+      token={'YOUR-TOKEN-HERE'}
+      email={"john.doe1987"} 
+      firstName={"John"}
+      lastName={"Doe"}
+    />
 
 ```
 
 ### Download & Installation
 
 ```shell 
-$ todo... 
+$ npm install --save reactjs-freshchat
 ```
 
 ### Contributing
 
-Keep it simple. Keep it minimal. Don't put every single feature just because you can.
+Keep it simple. Keep it minimal. Don't put every single feature just because you can. Have fun 🚀!
 
 ### Authors or Acknowledgments
 
 *   Vinicius Teixeira
 
 ### License
-
-todo
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
