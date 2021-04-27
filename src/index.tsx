@@ -51,7 +51,7 @@ export const Freshchat: React.FC<FreshChatProps> =  ({ token, email, firstName, 
         }
       }
     }, 1000)
-  }, [])
+  })
 
   return (
     null
