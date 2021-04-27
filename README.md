@@ -21,7 +21,7 @@ React component wrapper for Freshchat. The oficial documentation can be found he
  //2. Logged in User
     <Freshchat 
       token={'YOUR-TOKEN-HERE'}
-      email={"john.doe1987"} 
+      externalId={"john.doe1987"} 
       firstName={"John"}
       lastName={"Doe"}
     />
@@ -31,7 +31,7 @@ React component wrapper for Freshchat. The oficial documentation can be found he
 ### Download & Installation
 
 ```shell 
-$ npm install --save reactjs-freshchat
+$ npm i reactjs-freshchat
 ```
 
 ### Contributing
