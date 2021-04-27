@@ -5,12 +5,12 @@ declare const window: any;
 
 interface FreshChatProps {
   token: string;
-  email?: string;
+  externalId?: string;
   firstName?: string;
   lastName?: string;
 }
 
-export const Freshchat: React.FC<FreshChatProps> =  ({ token, email, firstName, lastName}) => {
+export const Freshchat: React.FC<FreshChatProps> =  ({ token, externalId, firstName, lastName}) => {
   //Metodo que injeta o script do freschart
   //pode ser encontrado na doc: https://developers.freshchat.com/web-sdk/#intro
   const loadScript = () => {
@@ -29,7 +29,7 @@ export const Freshchat: React.FC<FreshChatProps> =  ({ token, email, firstName, 
       window.fcWidget.init({
         host: 'https://wchat.freshchat.com',
         token: token,
-        externalId: email || '',
+        externalId: externalId || '',
         firstName: firstName || '',
         lastName: lastName || '',
       })
