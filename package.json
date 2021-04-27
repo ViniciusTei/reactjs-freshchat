@@ -9,6 +9,12 @@
     "start": "rollup -c -w"
   },
   "author": "ViniciusTei",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ViniciusTei/reactjs-freshchat.git"
+  },
+  "homepage": "https://github.com/ViniciusTei/reactjs-freshchat.git",
+  "keywords": ["freshchat", "react", "typescript"],
   "license": "MIT",
   "devDependencies": {
     "@types/react": "^17.0.4",
