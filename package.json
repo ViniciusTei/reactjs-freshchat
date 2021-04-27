@@ -1,7 +1,7 @@
 {
   "name": "reactjs-freshchat",
-  "version": "1.0.0",
-  "description": "A reactjs component wrapper for freshchat web-sdk api",
+  "version": "1.0.1",
+  "description": "A Reactjs component wrapper for Freshchat web-sdk api.",
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
