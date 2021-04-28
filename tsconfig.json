@@ -18,7 +18,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "typeRoots": [
-      "src/custom.d.ts",
+      "src/@types/custom.d.ts",
       "node_modules/@types"
     ]
   },
