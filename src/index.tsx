@@ -58,7 +58,7 @@ export const Freshchat: React.FC<FreshChatProps> =  ({
 
     //desabilita o botao na tela
     setIsWidgetOpen(!isWidgetOpen)
-    window.fcWidget.on("widget:closed", function(resp: any) {
+    window.fcWidget.on("widget:closed", function() {
       //reabilita o botao na tela
       setIsWidgetOpen(!isWidgetOpen)
     });
