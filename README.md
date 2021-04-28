@@ -9,6 +9,8 @@ React component wrapper for Freshchat. The oficial documentation can be found he
 
 *   Create a chat with anonymous user
 *   Create a chat with Logged in user
+*   Custom labeled chat
+    * Add a label to your chat icon. If you use this option the colors need to be defined in the component, or it will be the default Freshchat colors.
 
 ### Code Demo
 
@@ -25,7 +27,15 @@ React component wrapper for Freshchat. The oficial documentation can be found he
       firstName={"John"}
       lastName={"Doe"}
     />
-
+ //3. Labeled chat
+      <Freshchat 
+        token={'YOUR-TOKEN-HERE'} 
+        label="Label"
+        styles={{
+          backgroundColor: '#002d85', 
+          color: '#fff'
+        }}
+      />
 ```
 
 ### Download & Installation
