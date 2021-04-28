@@ -1,9 +1,9 @@
 {
   "name": "reactjs-freshchat",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "description": "A Reactjs component wrapper for Freshchat web-sdk api.",
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "style": "dist/styles.css",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c",
