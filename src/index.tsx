@@ -4,7 +4,7 @@ import './styles.css';
 //need to declare window for typescript stop complaining about fcWidget
 declare const window: any;
 
-interface FreshchatStyles {
+export interface FreshchatStyles {
   backgroundColor: string;
   color: string;
 }
@@ -27,7 +27,7 @@ export const Freshchat: React.FC<FreshChatProps> =  ({
   styles
 }) => {
   const [isWidgetOpen, setIsWidgetOpen] = React.useState(false);
-  const UrlIcon = 'https://s3.us-west-2.amazonaws.com/secure.notion-static.com/afc54a58-7f11-4dc2-83b3-f337748993c6/chat.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210428%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210428T171223Z&X-Amz-Expires=86400&X-Amz-Signature=c267b578bb9d30f0fc5afbdd1f3e0e35962eee06de878096f2952de5b7400dc7&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22chat.svg%22'
+  const UrlIcon = 'https://svgshare.com/i/WiJ.svg'
   //Metodo que injeta o script do freschart
   //pode ser encontrado na doc: https://developers.freshchat.com/web-sdk/#intro
   const loadScript = () => {

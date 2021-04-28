@@ -1,4 +1,5 @@
 import typescript from 'rollup-plugin-typescript2'
+import postcss from 'rollup-plugin-postcss'
 
 import pkg from './package.json'
 
@@ -14,7 +15,10 @@ export default {
     }
   ],
   plugins: [
-    typescript({ objectHashIgnoreUnknownHack: true })
+    typescript({ objectHashIgnoreUnknownHack: false }),
+    postcss({
+      plugins: []
+    })
   ],
   external: ['react', 'react-dom']
 }
