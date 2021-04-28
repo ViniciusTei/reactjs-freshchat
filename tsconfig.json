@@ -17,11 +17,7 @@
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "typeRoots": [
-      "src/@types/custom.d.ts",
-      "node_modules/@types"
-    ]
   },
-  "include": ["src/**/*"],
+  "include": ["src"],
   "exclude": ["node_modules", "dist", "example", "rollup.config.js"]
 }
