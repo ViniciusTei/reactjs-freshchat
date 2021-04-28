@@ -5,6 +5,20 @@ import ChatIcon from './assets/chat.svg';
 //need to declare window for typescript stop complaining about fcWidget
 declare const window: any;
 
+interface FreshchatStyles {
+  backgroundColor: string;
+  color: string;
+}
+
+export interface  FreshChatProps {
+  token: string;
+  externalId?: string;
+  firstName?: string;
+  lastName?: string;
+  label?: string;
+  styles?: FreshchatStyles;
+}
+
 export const Freshchat: React.FC<FreshChatProps> =  ({ 
   token, 
   externalId, 
