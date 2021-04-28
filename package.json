@@ -1,6 +1,6 @@
 {
   "name": "reactjs-freshchat",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "A Reactjs component wrapper for Freshchat web-sdk api.",
   "main": "dist/index.js",
   "scripts": {
