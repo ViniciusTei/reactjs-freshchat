@@ -3,6 +3,7 @@
   "version": "1.1.6",
   "description": "A Reactjs component wrapper for Freshchat web-sdk api.",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c",
@@ -14,16 +15,22 @@
     "url": "https://github.com/ViniciusTei/reactjs-freshchat.git"
   },
   "homepage": "https://github.com/ViniciusTei/reactjs-freshchat.git",
-  "keywords": ["freshchat", "react", "typescript"],
+  "keywords": [
+    "freshchat",
+    "react",
+    "typescript"
+  ],
   "license": "MIT",
   "devDependencies": {
     "@types/react": "^17.0.4",
     "@types/react-dom": "^17.0.3",
     "babel-core": "^6.26.3",
     "babel-runtime": "^6.26.0",
+    "postcss": "^8.2.13",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "rollup": "^2.45.2",
+    "rollup-plugin-postcss": "^4.0.0",
     "rollup-plugin-typescript2": "^0.30.0",
     "typescript": "^4.2.4"
   },
