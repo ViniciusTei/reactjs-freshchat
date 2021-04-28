@@ -1,6 +1,6 @@
 {
   "name": "reactjs-freshchat",
-  "version": "1.1.10",
+  "version": "1.1.11",
   "description": "A Reactjs component wrapper for Freshchat web-sdk api.",
   "main": "dist/index.js",
   "style": "dist/styles.css",
@@ -22,9 +22,13 @@
   ],
   "license": "MIT",
   "devDependencies": {
+    "@babel/core": "^7.13.16",
+    "@babel/preset-env": "^7.13.15",
+    "@babel/preset-react": "^7.13.13",
     "@types/react": "^17.0.4",
     "@types/react-dom": "^17.0.3",
     "babel-core": "^6.26.3",
+    "babel-loader": "^8.2.2",
     "babel-runtime": "^6.26.0",
     "postcss": "^8.2.13",
     "react": "^17.0.2",
@@ -35,7 +39,8 @@
     "typescript": "^4.2.4"
   },
   "peerDependencies": {
-    "react": "^17.0.2"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "files": [
     "dist"
