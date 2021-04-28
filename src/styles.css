@@ -1,0 +1,34 @@
+.buttonContainer {
+  width: 10%;
+  position: fixed;
+  right: 1px;
+  bottom: 20px;
+  cursor: pointer;
+}
+
+.buttonContent {
+  border-radius: 34px 8px 34px 34px;
+  box-shadow: 0 5px 4px 0 rgb(0 0 0 / 26%);
+  height: 50px;
+  width: 140px;
+  z-index: 9995;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 14px;
+  padding-left: 8px;
+}
+
+.buttonContainer img {
+  margin-right: 12px;
+  width: 18px;
+
+  cursor: pointer;
+}
+
+.buttonContainer label {
+  margin-bottom: 2px;
+  /*font-family: Montserrat, sans-serif;*/
+  cursor: pointer;
+}

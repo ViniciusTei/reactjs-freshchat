@@ -1,16 +1,33 @@
 import * as React from 'react'
+import './styles.css';
+import ChatIcon from './assets/chat.svg';
 
 //need to declare window for typescript stop complaining about fcWidget
 declare const window: any;
+
+interface FreshchatStyles {
+  backgroundColor: string;
+  color: string;
+}
 
 interface FreshChatProps {
   token: string;
   externalId?: string;
   firstName?: string;
   lastName?: string;
+  label?: string;
+  styles?: FreshchatStyles;
 }
 
-export const Freshchat: React.FC<FreshChatProps> =  ({ token, externalId, firstName, lastName}) => {
+export const Freshchat: React.FC<FreshChatProps> =  ({ 
+  token, 
+  externalId, 
+  firstName, 
+  lastName,
+  label,
+  styles
+}) => {
+  const [isWidgetOpen, setIsWidgetOpen] = React.useState(false);
   //Metodo que injeta o script do freschart
   //pode ser encontrado na doc: https://developers.freshchat.com/web-sdk/#intro
   const loadScript = () => {
@@ -36,6 +53,17 @@ export const Freshchat: React.FC<FreshChatProps> =  ({ token, externalId, firstN
     
   }
 
+  const toggleWidget = () => {
+    window.fcWidget.open();
+
+    //desabilita o botao na tela
+    setIsWidgetOpen(!isWidgetOpen)
+    window.fcWidget.on("widget:closed", function(resp: any) {
+      //reabilita o botao na tela
+      setIsWidgetOpen(!isWidgetOpen)
+    });
+  }
+
   React.useEffect(() => {
     loadScript()
 
@@ -54,6 +82,26 @@ export const Freshchat: React.FC<FreshChatProps> =  ({ token, externalId, firstN
   })
 
   return (
-    null
-  )
+    label ? (
+      <div className="buttonContainer" onClick={() => toggleWidget()}>
+        <div 
+          className="buttonContent"
+          style={{
+            backgroundColor: styles ? styles.backgroundColor : '#002d85',
+            color: styles ? styles.color : '#ffffff',
+            borderColor: styles ? 
+              `transparent ${styles.backgroundColor} transparent transparent` :
+              `transparent #002d85 transparent transparent`
+          }} 
+          
+          >
+          <label>{label}</label>
+          <img 
+            src={ChatIcon} 
+            alt="chat icon"
+            />
+        </div>
+      </div>
+   ) : null) 
+  
 }
