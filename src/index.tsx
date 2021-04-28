@@ -28,6 +28,7 @@ export const Freshchat: React.FC<FreshChatProps> =  ({
 }) => {
   const [isWidgetOpen, setIsWidgetOpen] = React.useState(false);
   const UrlIcon = 'https://svgshare.com/i/WiJ.svg'
+  
   //Metodo que injeta o script do freschart
   //pode ser encontrado na doc: https://developers.freshchat.com/web-sdk/#intro
   const loadScript = () => {
