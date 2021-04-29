@@ -1,5 +1,5 @@
 import * as React from 'react'
-import './styles.css';
+import styles from  './styles.module.css';
 
 //need to declare window for typescript stop complaining about fcWidget
 declare const window: any;
@@ -15,7 +15,7 @@ export interface  FreshChatProps {
   firstName?: string;
   lastName?: string;
   label?: string;
-  styles?: FreshchatStyles;
+  ic_styles?: FreshchatStyles;
 }
 
 export const Freshchat: React.FC<FreshChatProps> =  ({ 
@@ -24,10 +24,10 @@ export const Freshchat: React.FC<FreshChatProps> =  ({
   firstName, 
   lastName,
   label,
-  styles
+  ic_styles
 }) => {
   const [isWidgetOpen, setIsWidgetOpen] = React.useState(false);
-  const UrlIcon = 'https://svgshare.com/i/WiJ.svg'
+  const UrlIcon = 'https://firebasestorage.googleapis.com/v0/b/repfinder-450e2.appspot.com/o/chat.svg?alt=media&token=885c5d28-2165-4a24-a96c-c1b0c98fab3f'
   
   //Metodo que injeta o script do freschart
   //pode ser encontrado na doc: https://developers.freshchat.com/web-sdk/#intro
@@ -50,6 +50,11 @@ export const Freshchat: React.FC<FreshChatProps> =  ({
         externalId: externalId || '',
         firstName: firstName || '',
         lastName: lastName || '',
+        config: {
+          headerProperty: {
+            hideChatButton: label ? true : false
+          }
+        },
       })
     
   }
@@ -84,14 +89,14 @@ export const Freshchat: React.FC<FreshChatProps> =  ({
 
   return (
     label ? (
-      <div className="buttonContainer" onClick={() => toggleWidget()}>
+      <div className={styles.buttonContainer} onClick={() => toggleWidget()}>
         <div 
-          className="buttonContent"
+          className={styles.buttonContent}
           style={{
-            backgroundColor: styles ? styles.backgroundColor : '#002d85',
-            color: styles ? styles.color : '#ffffff',
-            borderColor: styles ? 
-              `transparent ${styles.backgroundColor} transparent transparent` :
+            backgroundColor: ic_styles ? ic_styles.backgroundColor : '#002d85',
+            color: ic_styles ? ic_styles.color : '#ffffff',
+            borderColor: ic_styles ? 
+              `transparent ${ic_styles.backgroundColor} transparent transparent` :
               `transparent #002d85 transparent transparent`
           }} 
           
