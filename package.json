@@ -1,10 +1,11 @@
 {
   "name": "reactjs-freshchat",
-  "version": "1.0.0",
-  "description": "React warpper for Freshchat web-sdk api.",
+  "version": "1.2.0",
+  "description": "A Reactjs component wrapper for Freshchat web-sdk api.",
   "author": "ViniciusTei",
   "license": "MIT",
   "repository": "ViniciusTei/reactjs-freshchat",
+  "homepage": "https://github.com/ViniciusTei/reactjs-freshchat.git",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.tsx",
@@ -59,5 +60,10 @@
   },
   "files": [
     "dist"
+  ],
+  "keywords": [
+    "freshchat",
+    "react",
+    "typescript"
   ]
 }
