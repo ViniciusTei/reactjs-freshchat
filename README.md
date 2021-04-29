@@ -32,7 +32,7 @@ React component wrapper for Freshchat. The oficial documentation can be found he
       <Freshchat 
         token={'YOUR-TOKEN-HERE'} 
         label="Label"
-        styles={{
+        ic_styles={{
           backgroundColor: '#002d85', 
           color: '#fff'
         }}
