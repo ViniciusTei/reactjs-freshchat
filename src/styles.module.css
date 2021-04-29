@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 .buttonContainer {
   width: 10%;
   position: fixed;
-  right: 1px;
+  right: 1rem;
   bottom: 20px;
   cursor: pointer;
 }
@@ -10,25 +11,26 @@
   border-radius: 34px 8px 34px 34px;
   box-shadow: 0 5px 4px 0 rgb(0 0 0 / 26%);
   height: 50px;
-  width: 140px;
+  max-width: 140px;
+  width: 60%;
+  padding-right: .5rem;
   z-index: 9995;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  font-size: 14px;
-  padding-left: 8px;
+  font-size: 1rem;
+  padding-left: .5rem;
 }
 
 .buttonContainer img {
-  margin-right: 12px;
-  width: 18px;
-
+  width: 1.375rem;
   cursor: pointer;
 }
 
 .buttonContainer label {
   margin-bottom: 2px;
-  /*font-family: Montserrat, sans-serif;*/
+  font-family: 'Roboto', sans-serif;
   cursor: pointer;
+  text-transform: capitalize;
 }

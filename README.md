@@ -16,6 +16,7 @@ React component wrapper for Freshchat. The oficial documentation can be found he
 
 ```tsx
   import { Freshchat } from 'reactjs-freshchat';
+  import 'reactjs-freshchat/dist/index.css'
 
  //1. Anonymous User
     <Freshchat token={'YOUR-TOKEN-HERE'} />
@@ -27,7 +28,7 @@ React component wrapper for Freshchat. The oficial documentation can be found he
       firstName={"John"}
       lastName={"Doe"}
     />
- //3. Labeled chat
+ //3. Labeled chat and styled colors
       <Freshchat 
         token={'YOUR-TOKEN-HERE'} 
         label="Label"
@@ -53,4 +54,5 @@ Keep it simple. Keep it minimal. Don't put every single feature just because you
 *   Vinicius Teixeira
 
 ### License
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+MIT © [ViniciusTei](https://github.com/ViniciusTei)
