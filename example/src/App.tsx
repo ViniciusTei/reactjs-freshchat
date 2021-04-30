@@ -6,9 +6,9 @@ import 'reactjs-freshchat/dist/index.css'
 const App = () => {
   return (
     <div>
-      <h1>Create React Component Example 😄</h1>
+      <h1>Create React FreshChat Component Example 😄</h1>
       <Freshchat 
-        token={"03c69b1e-6a70-4e8f-9380-d56ba7a5df8f"} 
+        token={process.env.REACT_APP_FRESHCHAT || ''} 
        
         ic_styles={{
           backgroundColor: '#002d85', 
