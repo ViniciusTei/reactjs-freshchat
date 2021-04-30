@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 .buttonContainer {
-  width: 10%;
+  width: 120px;
   position: fixed;
   right: 1rem;
   bottom: 20px;
@@ -12,7 +12,7 @@
   box-shadow: 0 5px 4px 0 rgb(0 0 0 / 26%);
   height: 50px;
   max-width: 140px;
-  width: 60%;
+  width: 80%;
   padding-right: .5rem;
   z-index: 9995;
   cursor: pointer;
