@@ -2,7 +2,7 @@
 .buttonContainer {
   width: 120px;
   position: fixed;
-  right: 1rem;
+  right: 1.2rem;
   bottom: 20px;
   cursor: pointer;
 }
@@ -12,7 +12,7 @@
   box-shadow: 0 5px 4px 0 rgb(0 0 0 / 26%);
   height: 50px;
   max-width: 140px;
-  width: 80%;
+  width: 100%;
   padding-right: .5rem;
   z-index: 9995;
   cursor: pointer;
@@ -32,5 +32,9 @@
   margin-bottom: 2px;
   font-family: 'Roboto', sans-serif;
   cursor: pointer;
+  width: 80px;
+  max-width: 80px;
+  text-overflow: ellipsis;
   text-transform: capitalize;
+  overflow: hidden;
 }
