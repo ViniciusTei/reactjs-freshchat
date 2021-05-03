@@ -63,11 +63,15 @@ export const Freshchat: React.FC<FreshChatProps> =  ({
     window.fcWidget.open();
 
     //desabilita o botao na tela
-    setIsWidgetOpen(!isWidgetOpen)
-    window.fcWidget.on("widget:closed", function() {
+    setIsWidgetOpen(true)
+    let script = document.createElement('script')
+    script.async = true
+    script.type = 'text/javascript'
+    script.src = `${window.fcWidget.on("widget:closed", function() {
       //reabilita o botao na tela
-      setIsWidgetOpen(!isWidgetOpen)
-    });
+      setIsWidgetOpen(false)
+    })}`
+    document.head.appendChild(script)
   }
 
   React.useEffect(() => {
@@ -89,7 +93,7 @@ export const Freshchat: React.FC<FreshChatProps> =  ({
 
   return (
     label ? (
-      <div className={styles.buttonContainer} onClick={() => toggleWidget()}>
+      !isWidgetOpen ? <div className={styles.buttonContainer} onClick={() => toggleWidget()}>
         <div 
           className={styles.buttonContent}
           style={{
@@ -107,7 +111,7 @@ export const Freshchat: React.FC<FreshChatProps> =  ({
             alt="chat icon"
             />
         </div>
-      </div>
+      </div> : null
    ) : null) 
   
 }
