@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 .buttonContainer {
-  width: 120px;
+  width: 110px;
   position: fixed;
   right: 1.2rem;
   bottom: 20px;
@@ -26,6 +26,7 @@
 .buttonContainer img {
   width: 1.375rem;
   cursor: pointer;
+  margin-right: .3rem;
 }
 
 .buttonContainer label {
@@ -37,4 +38,5 @@
   text-overflow: ellipsis;
   text-transform: capitalize;
   overflow: hidden;
+  margin-right: -1rem;
 }
