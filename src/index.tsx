@@ -29,8 +29,8 @@ export const Freshchat: React.FC<FreshChatProps> =  ({
   const [isWidgetOpen, setIsWidgetOpen] = React.useState(false);
   const UrlIcon = 'https://firebasestorage.googleapis.com/v0/b/repfinder-450e2.appspot.com/o/chat.svg?alt=media&token=885c5d28-2165-4a24-a96c-c1b0c98fab3f'
   
-  //Metodo que injeta o script do freschart
-  //pode ser encontrado na doc: https://developers.freshchat.com/web-sdk/#intro
+  //Inject FreshChat script in the html
+  //oficial doc: https://developers.freshchat.com/web-sdk/#intro
   const loadScript = () => {
     let id = 'freshchat-lib'
     if (document.getElementById(id) || window.fcWidget) return
@@ -42,7 +42,7 @@ export const Freshchat: React.FC<FreshChatProps> =  ({
     document.head.appendChild(script)
   }
 
-  //iniciar o fresch chart passando os dados do petshop
+  //Init FreshChat with the data passed in
   const init = () => {
       window.fcWidget.init({
         host: 'https://wchat.freshchat.com',
@@ -62,13 +62,13 @@ export const Freshchat: React.FC<FreshChatProps> =  ({
   const toggleWidget = () => {
     window.fcWidget.open();
 
-    //desabilita o botao na tela
+    //hide button
     setIsWidgetOpen(true)
     let script = document.createElement('script')
     script.async = true
     script.type = 'text/javascript'
     script.src = `${window.fcWidget.on("widget:closed", function() {
-      //reabilita o botao na tela
+      //show button
       setIsWidgetOpen(false)
     })}`
     document.head.appendChild(script)
@@ -77,8 +77,8 @@ export const Freshchat: React.FC<FreshChatProps> =  ({
   React.useEffect(() => {
     loadScript()
 
-    //Precisa ficar testando se o scrpit foi injetado
-    //para so entao iniciar o freschat.
+
+    //need check if the FresChat was initalized before try to init the icon
     let interval = setInterval(() => {
       if(window.fcWidget) {
         clearInterval(interval)
