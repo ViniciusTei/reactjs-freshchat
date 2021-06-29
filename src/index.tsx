@@ -4,27 +4,37 @@ import styles from  './styles.module.css';
 //need to declare window for typescript stop complaining about fcWidget
 declare const window: any;
 
+type FreshchatInitProps = {
+  token: string;
+  externalId?: string;
+  firstName?: string;
+  lastName?: string;
+  host?: string;
+  restoreId?: string
+  email?: string;
+  phone?: string;
+  phoneCountryCode?: string;
+  config?: any;
+  open?: boolean;
+  tags?: [string];
+  faqTags?: any;
+  locale?: string;
+}
+
 export interface FreshchatStyles {
   backgroundColor: string;
   color: string;
 }
 
-export interface  FreshChatProps {
-  token: string;
-  externalId?: string;
-  firstName?: string;
-  lastName?: string;
+export interface  FreshChatProps extends FreshchatInitProps {
   label?: string;
   ic_styles?: FreshchatStyles;
 }
 
 export const Freshchat: React.FC<FreshChatProps> =  ({ 
-  token, 
-  externalId, 
-  firstName, 
-  lastName,
   label,
-  ic_styles
+  ic_styles,
+  ...rest
 }) => {
   const [isWidgetOpen, setIsWidgetOpen] = React.useState(false);
   const UrlIcon = 'https://firebasestorage.googleapis.com/v0/b/repfinder-450e2.appspot.com/o/chat.svg?alt=media&token=885c5d28-2165-4a24-a96c-c1b0c98fab3f'
@@ -33,7 +43,9 @@ export const Freshchat: React.FC<FreshChatProps> =  ({
   //oficial doc: https://developers.freshchat.com/web-sdk/#intro
   const loadScript = () => {
     let id = 'freshchat-lib'
+    
     if (document.getElementById(id) || window.fcWidget) return
+    
     let script = document.createElement('script')
     script.async = true
     script.type = 'text/javascript'
@@ -44,17 +56,26 @@ export const Freshchat: React.FC<FreshChatProps> =  ({
 
   //Init FreshChat with the data passed in
   const init = () => {
-      window.fcWidget.init({
-        host: 'https://wchat.freshchat.com',
-        token: token,
-        externalId: externalId || '',
-        firstName: firstName || '',
-        lastName: lastName || '',
-        config: {
-          headerProperty: {
-            hideChatButton: label ? true : false
+      if(label) {
+        if(!rest.config) {
+          rest.config =  {
+            
           }
-        },
+        } else {
+          rest.config = {
+            ...rest.config,
+            headerProperty: {
+              hideChatButton: true
+            }
+          }
+        }
+        
+      }
+
+      if(!rest.host) rest.host = 'https://wchat.freshchat.com'
+
+      window.fcWidget.init({
+        ...rest
       })
     
   }
@@ -67,11 +88,26 @@ export const Freshchat: React.FC<FreshChatProps> =  ({
     let script = document.createElement('script')
     script.async = true
     script.type = 'text/javascript'
-    script.src = `${window.fcWidget.on("widget:closed", function() {
-      //show button
-      setIsWidgetOpen(false)
-    })}`
+    script.src = `${
+      window.fcWidget.on("widget:closed", function() {
+        //show button
+        setIsWidgetOpen(false)
+      })
+      
+    }`
     document.head.appendChild(script)
+
+    let script_event = document.createElement('script')
+    script_event.async = true
+    script_event.type = 'text/javascript'
+    script_event.src = `${
+      window.fcWidget.on("user:created", function() {
+        console.log('User has been created');
+        //Function to do some task
+      })
+      
+    }`
+    document.head.appendChild(script_event)
   }
 
   React.useEffect(() => {
