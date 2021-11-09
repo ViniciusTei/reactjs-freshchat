@@ -31,11 +31,11 @@ export interface FreshChatProps extends FreshchatInitProps {
   ic_styles?: FreshchatStyles
 }
 
-export const Freshchat: React.FC<FreshChatProps> = ({
+export function Freshchat({
   label,
   ic_styles,
   ...rest
-}) => {
+}: FreshChatProps): JSX.Element | null {
   const [isWidgetOpen, setIsWidgetOpen] = React.useState(false)
   const UrlIcon =
     'https://firebasestorage.googleapis.com/v0/b/repfinder-450e2.appspot.com/o/chat.svg?alt=media&token=885c5d28-2165-4a24-a96c-c1b0c98fab3f'
@@ -59,7 +59,11 @@ export const Freshchat: React.FC<FreshChatProps> = ({
   const init = () => {
     if (label) {
       if (!rest.config) {
-        rest.config = {}
+        rest.config = {
+          headerProperty: {
+            hideChatButton: true
+          }
+        }
       } else {
         rest.config = {
           ...rest.config,
@@ -69,6 +73,8 @@ export const Freshchat: React.FC<FreshChatProps> = ({
         }
       }
     }
+
+    console.log(JSON.stringify(rest, null, 2))
 
     if (!rest.host) rest.host = 'https://wchat.freshchat.com'
 
@@ -117,23 +123,25 @@ export const Freshchat: React.FC<FreshChatProps> = ({
     }, 1000)
   })
 
-  return label ? (
-    !isWidgetOpen ? (
-      <div className={styles.buttonContainer} onClick={() => toggleWidget()}>
-        <div
-          className={styles.buttonContent}
-          style={{
-            backgroundColor: ic_styles ? ic_styles.backgroundColor : '#002d85',
-            color: ic_styles ? ic_styles.color : '#ffffff',
-            borderColor: ic_styles
-              ? `transparent ${ic_styles.backgroundColor} transparent transparent`
-              : `transparent #002d85 transparent transparent`
-          }}
-        >
-          <label>{label}</label>
-          <img src={UrlIcon} alt='chat icon' width='22px' height='22px' />
-        </div>
+  if (!label) {
+    return null
+  }
+
+  return !isWidgetOpen ? (
+    <div className={styles.buttonContainer} onClick={() => toggleWidget()}>
+      <div
+        className={styles.buttonContent}
+        style={{
+          backgroundColor: ic_styles ? ic_styles.backgroundColor : '#002d85',
+          color: ic_styles ? ic_styles.color : '#ffffff',
+          borderColor: ic_styles
+            ? `transparent ${ic_styles.backgroundColor} transparent transparent`
+            : `transparent #002d85 transparent transparent`
+        }}
+      >
+        <label>{label}</label>
+        <img src={UrlIcon} alt='chat icon' width='22px' height='22px' />
       </div>
-    ) : null
+    </div>
   ) : null
 }
