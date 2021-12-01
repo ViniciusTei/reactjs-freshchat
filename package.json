@@ -1,6 +1,6 @@
 {
   "name": "reactjs-freshchat",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "A Reactjs component wrapper for Freshchat web-sdk api.",
   "author": "ViniciusTei",
   "license": "MIT",
