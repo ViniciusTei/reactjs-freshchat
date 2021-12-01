@@ -74,8 +74,6 @@ export function Freshchat({
       }
     }
 
-    console.log(JSON.stringify(rest, null, 2))
-
     if (!rest.host) rest.host = 'https://wchat.freshchat.com'
 
     window.fcWidget.init({
