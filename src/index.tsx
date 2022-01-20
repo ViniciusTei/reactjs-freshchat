@@ -137,7 +137,7 @@ export function Freshchat({
             : `transparent #002d85 transparent transparent`
         }}
       >
-        <label>{label}</label>
+        <div>{label}</div>
         <img src={UrlIcon} alt='chat icon' width='22px' height='22px' />
       </div>
     </div>
