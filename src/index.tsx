@@ -82,10 +82,11 @@ export function Freshchat({
   }
 
   const toggleWidget = () => {
-    window.fcWidget.open()
-
     // hide button
     setIsWidgetOpen(true)
+
+    if (window.fcWidget === undefined) return
+    window.fcWidget.open()
     const script = document.createElement('script')
     script.async = true
     script.type = 'text/javascript'
@@ -126,7 +127,11 @@ export function Freshchat({
   }
 
   return !isWidgetOpen ? (
-    <div className={styles.buttonContainer} onClick={() => toggleWidget()}>
+    <div
+      id='btn-widget'
+      className={styles.buttonContainer}
+      onClick={() => toggleWidget()}
+    >
       <div
         className={styles.buttonContent}
         style={{
