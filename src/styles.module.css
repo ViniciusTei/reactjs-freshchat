@@ -29,7 +29,7 @@
   margin-right: .3rem;
 }
 
-.buttonContainer label {
+.buttonContainer div {
   margin-bottom: 2px;
   font-family: 'Roboto', sans-serif;
   cursor: pointer;
