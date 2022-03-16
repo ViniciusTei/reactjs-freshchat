@@ -9,6 +9,7 @@
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/viniciustei/reactjs-freshchat/Publish%20to%20npm)
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/viniciustei/reactjs-freshchat/Run%20tests?label=tests)
 [![NPM](https://img.shields.io/npm/v/reactjs-freshchat.svg)](https://www.npmjs.com/package/reactjs-freshchat) 
+![npm](https://img.shields.io/npm/dw/reactjs-freshchat)
 
 </div>
 
