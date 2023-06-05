@@ -1,3 +1,7 @@
+> 📁 **Repository archived due to lack of time to address issues and continue project improvement**
+>
+> This repository has been archived due to time constraints that prevent me from effectively responding to pending issues and further developing this project. Thank you for your understanding and interest in this project!
+
 <div align="center">
 
 # ReactJS Freshchat
